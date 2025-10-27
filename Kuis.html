@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuis Interaktif KPK & Jajar Genjang</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8fafc; margin: 0; padding: 0; }
+    header { background-color: #2b5fab; color: white; padding: 15px; text-align: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; background: #446fe7; padding: 6px 12px; border-radius: 6px; }
+    nav a:hover { background: #1c3f91; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
+    button { background-color: #2b5fab; color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; margin: 5px; }
+    button:hover { background-color: #1c3f91; }
+    .question { margin-top: 25px; background: #e9f1ff; padding: 15px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .feedback { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kuis Interaktif KPK & Keliling Jajar Genjang</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="kpk.html">KPK</a>
+      <a href="jajargenjang.html">Jajar Genjang</a>
+      <a href="soal.html">Soal Cerita</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>🧮 Kuis KPK (Kelipatan Persekutuan Terkecil)</h2>
+
+    <div class="question" id="kpk1">
+      <p>1️⃣ KPK dari 3 dan 5 adalah ...</p>
+      <button onclick="checkAnswer('kpk1', 15)">15</button>
+      <button onclick="checkAnswer('kpk1', 10)">10</button>
+      <button onclick="checkAnswer('kpk1', 30)">30</button>
+      <p class="feedback" id="feedback-kpk1"></p>
+    </div>
+
+    <div class="question" id="kpk2">
+      <p>2️⃣ KPK dari 4 dan 6 adalah ...</p>
+      <button onclick="checkAnswer('kpk2', 8)">8</button>
+      <button onclick="checkAnswer('kpk2', 12)">12</button>
+      <button onclick="checkAnswer('kpk2', 24)">24</button>
+      <p class="feedback" id="feedback-kpk2"></p>
+    </div>
+
+    <div class="question" id="kpk3">
+      <p>3️⃣ KPK dari 8 dan 12 adalah ...</p>
+      <button onclick="checkAnswer('kpk3', 16)">16</button>
+      <button onclick="checkAnswer('kpk3', 24)">24</button>
+      <button onclick="checkAnswer('kpk3', 36)">36</button>
+      <p class="feedback" id="feedback-kpk3"></p>
+    </div>
+
+    <div class="question" id="kpk4">
+      <p>4️⃣ KPK dari 5 dan 10 adalah ...</p>
+      <button onclick="checkAnswer('kpk4', 5)">5</button>
+      <button onclick="checkAnswer('kpk4', 10)">10</button>
+      <button onclick="checkAnswer('kpk4', 20)">20</button>
+      <p class="feedback" id="feedback-kpk4"></p>
+    </div>
+
+    <div class="question" id="kpk5">
+      <p>5️⃣ KPK dari 6 dan 9 adalah ...</p>
+      <button onclick="checkAnswer('kpk5', 12)">12</button>
+      <button onclick="checkAnswer('kpk5', 18)">18</button>
+      <button onclick="checkAnswer('kpk5', 24)">24</button>
+      <p class="feedback" id="feedback-kpk5"></p>
+    </div>
+
+    <h2>📏 Kuis Keliling Jajar Genjang</h2>
+
+    <div class="question" id="jg1">
+      <p>6️⃣ Jika alas 12 cm dan sisi miring 8 cm, maka kelilingnya adalah ...</p>
+      <button onclick="checkAnswer('jg1', 36)">36 cm</button>
+      <button onclick="checkAnswer('jg1', 40)">40 cm</button>
+      <button onclick="checkAnswer('jg1', 30)">30 cm</button>
+      <p class="feedback" id="feedback-jg1"></p>
+    </div>
+
+    <div class="question" id="jg2">
+      <p>7️⃣ Jika alas 10 cm dan sisi miring 7 cm, maka kelilingnya adalah ...</p>
+      <button onclick="checkAnswer('jg2', 34)">34 cm</button>
+      <button onclick="checkAnswer('jg2', 30)">30 cm</button>
+      <button onclick="checkAnswer('jg2', 28)">28 cm</button>
+      <p class="feedback" id="feedback-jg2"></p>
+    </div>
+
+    <div class="question" id="jg3">
+      <p>8️⃣ Jika alas 9 cm dan sisi miring 6 cm, maka kelilingnya adalah ...</p>
+      <button onclick="checkAnswer('jg3', 28)">28 cm</button>
+      <button onclick="checkAnswer('jg3', 30)">30 cm</button>
+      <button onclick="checkAnswer('jg3', 32)">32 cm</button>
+      <p class="feedback" id="feedback-jg3"></p>
+    </div>
+
+    <div class="question" id="jg4">
+      <p>9️⃣ Jika alas 15 cm dan sisi miring 10 cm, maka kelilingnya adalah ...</p>
+      <button onclick="checkAnswer('jg4', 40)">40 cm</button>
+      <button onclick="checkAnswer('jg4', 50)">50 cm</button>
+      <button onclick="checkAnswer('jg4', 30)">30 cm</button>
+      <p class="feedback" id="feedback-jg4"></p>
+    </div>
+
+    <div class="question" id="jg5">
+      <p>🔟 Jika alas 20 cm dan sisi miring 12 cm, maka kelilingnya adalah ...</p>
+      <button onclick="checkAnswer('jg5', 64)">64 cm</button>
+      <button onclick="checkAnswer('jg5', 50)">50 cm</button>
+      <button onclick="checkAnswer('jg5', 60)">60 cm</button>
+      <p class="feedback" id="feedback-jg5"></p>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswers = {
+      kpk1: 15, kpk2: 12, kpk3: 24, kpk4: 10, kpk5: 18,
+      jg1: 40, jg2: 34, jg3: 30, jg4: 50, jg5: 64
+    };
+
+    const explanations = {
+      kpk1: "KPK dari 3 dan 5 = 15 karena 15 adalah bilangan terkecil yang habis dibagi 3 dan 5.",
+      kpk2: "KPK dari 4 dan 6 = 12 karena 12 habis dibagi 4 dan 6.",
+      kpk3: "KPK dari 8 dan 12 = 24 karena 24 adalah kelipatan terkecil keduanya.",
+      kpk4: "KPK dari 5 dan 10 = 10 karena 10 adalah kelipatan terkecil dari 5 dan 10.",
+      kpk5: "KPK dari 6 dan 9 = 18 karena 18 adalah kelipatan terkecil dari keduanya.",
+      jg1: "Keliling = 2 × (alas + sisi) = 2 × (12 + 8) = 40 cm.",
+      jg2: "Keliling = 2 × (10 + 7) = 34 cm.",
+      jg3: "Keliling = 2 × (9 + 6) = 30 cm.",
+      jg4: "Keliling = 2 × (15 + 10) = 50 cm.",
+      jg5: "Keliling = 2 × (20 + 12) = 64 cm."
+    };
+
+    const pujian = [
+      "🎉 Hebat, kamu benar!",
+      "🌟 Keren banget!",
+      "👏 Luar biasa, kamu pintar!",
+      "💪 Jawaban kamu tepat sekali!",
+      "🏅 Mantap! Pertahankan ya!"
+    ];
+
+    const semangat = [
+      "💡 Jangan menyerah! Ayo coba lagi!",
+      "🔥 Semangat! Kamu pasti bisa!",
+      "😇 Belajar dari kesalahan itu keren!",
+      "💫 Coba lagi ya, kamu hampir benar!",
+      "🧠 Yuk, pelajari lagi supaya makin paham!"
+    ];
+
+    function checkAnswer(questionId, answer) {
+      const correct = correctAnswers[questionId];
+      const feedback = document.getElementById('feedback-' + questionId);
+      feedback.style.transition = "all 0.3s ease";
+
+      if (answer === correct) {
+        const randomPraise = pujian[Math.floor(Math.random() * pujian.length)];
+        feedback.innerHTML = `${randomPraise} ✅`;
+        feedback.style.color = "#007b00";
+      } else {
+        const randomMotivation = semangat[Math.floor(Math.random() * semangat.length)];
+        feedback.innerHTML = `${randomMotivation}<br>❗ Jawaban yang benar adalah: <strong>${correct}</strong><br>${explanations[questionId]}`;
+        feedback.style.color = "#c40000";
+      }
+    }
+  </script>
+</body>
+</html>

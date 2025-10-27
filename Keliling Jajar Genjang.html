@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Materi Keliling Jajar Genjang</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f8fafc; 
+      margin: 0; 
+      padding: 0; 
+    }
+    header { 
+      background-color: #2b5fab; 
+      color: white; 
+      padding: 15px; 
+    }
+    nav a { 
+      color: white; 
+      margin: 0 10px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      background: #446fe7; 
+      padding: 6px 12px; 
+      border-radius: 6px; 
+    }
+    nav a:hover { 
+      background: #1c3f91; 
+    }
+    .container { 
+      max-width: 900px; 
+      margin: auto; 
+      padding: 20px; 
+    }
+    iframe { 
+      width: 100%; 
+      height: 360px; 
+      border: none; 
+      border-radius: 10px; 
+    }
+    .alat-interaktif {
+      background: #e9f1ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #2b5fab;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #1c3f91;
+    }
+    .hasil {
+      margin-top: 15px;
+      background: #f0f8ff;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Materi Keliling Jajar Genjang</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="kpk.html">KPK</a>
+      <a href="kuis.html">Kuis</a>
+      <a href="soal.html">Soal Cerita</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Pengertian Jajar Genjang</h2>
+    <p>Jajar genjang adalah bangun datar yang memiliki dua pasang sisi berhadapan yang sejajar dan sama panjang.</p>
+
+    <h3>Rumus Keliling:</h3>
+    <p><strong>K = 2 × (alas + sisi miring)</strong></p>
+
+    <h3>Video Penjelasan</h3>
+    <iframe src="https://www.youtube.com/embed/BJmErPbe7FA" title="Video Materi Keliling Jajar Genjang" allowfullscreen></iframe>
+
+    <div class="alat-interaktif">
+      <h3>🔢 Alat Bantu Interaktif: Hitung Keliling Jajar Genjang</h3>
+      <p>Masukkan panjang alas dan sisi miring untuk menghitung keliling jajar genjang.</p>
+
+      <label for="alas">Panjang Alas (cm):</label>
+      <input type="number" id="alas" placeholder="Masukkan panjang alas">
+
+      <label for="sisi">Panjang Sisi Miring (cm):</label>
+      <input type="number" id="sisi" placeholder="Masukkan panjang sisi miring">
+
+      <button onclick="hitungKeliling()">Hitung Keliling</button>
+
+      <div id="hasil" class="hasil"></div>
+    </div>
+  </div>
+
+  <script>
+    function hitungKeliling() {
+      const alas = parseFloat(document.getElementById("alas").value);
+      const sisi = parseFloat(document.getElementById("sisi").value);
+      const hasilDiv = document.getElementById("hasil");
+
+      if (isNaN(alas) || isNaN(sisi)) {
+        hasilDiv.innerHTML = "⚠️ Silakan masukkan kedua nilai (alas dan sisi miring) terlebih dahulu.";
+        return;
+      }
+
+      const keliling = 2 * (alas + sisi);
+      hasilDiv.innerHTML = `
+        ✅ Hasil: Keliling jajar genjang adalah <strong>${keliling.toFixed(2)} cm</strong>.<br><br>
+        💡 Penjelasan: Rumus keliling jajar genjang adalah <strong>K = 2 × (alas + sisi miring)</strong>. 
+        Jadi, K = 2 × (${alas} + ${sisi}) = <strong>${keliling.toFixed(2)} cm</strong>.
+      `;
+    }
+  </script>
+</body>
+</html>

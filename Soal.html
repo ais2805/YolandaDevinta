@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Soal Cerita Kontekstual Interaktif</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8fafc; margin: 0; padding: 0; }
+    header { background-color: #2b5fab; color: white; padding: 15px; text-align:center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; background: #446fe7; padding: 6px 12px; border-radius: 6px; }
+    nav a:hover { background: #1c3f91; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
+    .soal { background: #ffffff; margin: 20px 0; padding: 20px; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
+    button { background-color: #2b5fab; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; margin: 5px; }
+    button:hover { background-color: #1c3f91; }
+    .feedback { font-weight: bold; margin-top: 10px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Soal Cerita Kontekstual — KPK & Keliling Jajar Genjang</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="kpk.html">KPK</a>
+      <a href="jajargenjang.html">Jajar Genjang</a>
+      <a href="kuis.html">Kuis</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>🧮 Soal Cerita KPK</h2>
+
+    <div class="soal" id="soal-kpk1">
+      <p>1️⃣ Dinda berlatih menari setiap 4 hari sekali, sedangkan Sinta setiap 6 hari sekali. Jika hari ini mereka berlatih bersama, berapa hari lagi mereka akan berlatih bersama lagi?</p>
+      <button onclick="cekJawaban('kpk1', 12)">12 hari</button>
+      <button onclick="cekJawaban('kpk1', 10)">10 hari</button>
+      <button onclick="cekJawaban('kpk1', 24)">24 hari</button>
+      <p class="feedback" id="feedback-kpk1"></p>
+    </div>
+
+    <div class="soal" id="soal-kpk2">
+      <p>2️⃣ Sebuah taman memiliki dua air mancur. Air mancur A menyala setiap 9 menit dan air mancur B setiap 12 menit. Setiap berapa menit keduanya akan menyala bersamaan?</p>
+      <button onclick="cekJawaban('kpk2', 24)">24 menit</button>
+      <button onclick="cekJawaban('kpk2', 36)">36 menit</button>
+      <button onclick="cekJawaban('kpk2', 18)">18 menit</button>
+      <p class="feedback" id="feedback-kpk2"></p>
+    </div>
+
+    <div class="soal" id="soal-kpk3">
+      <p>3️⃣ Di sekolah, bel istirahat berbunyi setiap 15 menit, dan bel pergantian pelajaran berbunyi setiap 20 menit. Setiap berapa menit kedua bel akan berbunyi bersamaan?</p>
+      <button onclick="cekJawaban('kpk3', 45)">45 menit</button>
+      <button onclick="cekJawaban('kpk3', 60)">60 menit</button>
+      <button onclick="cekJawaban('kpk3', 75)">75 menit</button>
+      <p class="feedback" id="feedback-kpk3"></p>
+    </div>
+
+    <h2>📏 Soal Cerita Keliling Jajar Genjang</h2>
+
+    <div class="soal" id="soal-jg1">
+      <p>4️⃣ Sebuah taman berbentuk jajar genjang memiliki alas 14 meter dan sisi miring 10 meter. Hitunglah keliling taman tersebut!</p>
+      <button onclick="cekJawaban('jg1', 48)">48 m</button>
+      <button onclick="cekJawaban('jg1', 50)">50 m</button>
+      <button onclick="cekJawaban('jg1', 40)">40 m</button>
+      <p class="feedback" id="feedback-jg1"></p>
+    </div>
+
+    <div class="soal" id="soal-jg2">
+      <p>5️⃣ Papan nama toko Bu Rina berbentuk jajar genjang dengan alas 18 cm dan sisi miring 12 cm. Berapa keliling papan nama tersebut?</p>
+      <button onclick="cekJawaban('jg2', 60)">60 cm</button>
+      <button onclick="cekJawaban('jg2', 64)">64 cm</button>
+      <button onclick="cekJawaban('jg2', 72)">72 cm</button>
+      <p class="feedback" id="feedback-jg2"></p>
+    </div>
+
+    <div class="soal" id="soal-jg3">
+      <p>6️⃣ Sebuah taman kecil berbentuk jajar genjang memiliki alas 9 meter dan sisi miring 6 meter. Hitung keliling taman tersebut!</p>
+      <button onclick="cekJawaban('jg3', 24)">24 m</button>
+      <button onclick="cekJawaban('jg3', 28)">28 m</button>
+      <button onclick="cekJawaban('jg3', 30)">30 m</button>
+      <p class="feedback" id="feedback-jg3"></p>
+    </div>
+  </div>
+
+  <script>
+    const jawabanBenar = {
+      kpk1: 12,
+      kpk2: 36,
+      kpk3: 60,
+      jg1: 48,
+      jg2: 60,
+      jg3: 30
+    };
+
+    const penjelasan = {
+      kpk1: "KPK dari 4 dan 6 adalah 12, jadi mereka akan berlatih bersama setiap 12 hari sekali.",
+      kpk2: "KPK dari 9 dan 12 adalah 36, jadi kedua air mancur menyala bersama setiap 36 menit.",
+      kpk3: "KPK dari 15 dan 20 adalah 60, jadi kedua bel akan berbunyi bersama setiap 60 menit.",
+      jg1: "Keliling = 2 × (14 + 10) = 2 × 24 = 48 meter.",
+      jg2: "Keliling = 2 × (18 + 12) = 2 × 30 = 60 cm.",
+      jg3: "Keliling = 2 × (9 + 6) = 2 × 15 = 30 meter."
+    };
+
+    const pujian = [
+      "🌟 Hebat sekali! Kamu paham konsepnya!",
+      "👏 Jawaban kamu benar! Keren banget!",
+      "💪 Luar biasa, terus pertahankan semangatmu!",
+      "🏅 Tepat sekali! Kamu benar-benar teliti!",
+      "🎉 Hebat, kamu menguasai materinya!"
+    ];
+
+    const semangat = [
+      "💡 Ayo semangat! Kesalahan itu bagian dari belajar!",
+      "🔥 Jangan menyerah, kamu pasti bisa!",
+      "💫 Yuk coba lagi, pelajari penjelasannya ya!",
+      "😊 Sedikit lagi benar, tetap semangat!",
+      "🧠 Belajar dari kesalahan membuatmu semakin pintar!"
+    ];
+
+    function cekJawaban(id, jawaban) {
+      const benar = jawabanBenar[id];
+      const feedback = document.getElementById("feedback-" + id);
+
+      if (jawaban === benar) {
+        const acakPujian = pujian[Math.floor(Math.random() * pujian.length)];
+        feedback.innerHTML = `${acakPujian} ✅`;
+        feedback.style.color = "#007b00";
+      } else {
+        const acakSemangat = semangat[Math.floor(Math.random() * semangat.length)];
+        feedback.innerHTML = `${acakSemangat}<br>❗ Jawaban yang benar adalah: <strong>${benar}</strong><br>${penjelasan[id]}`;
+        feedback.style.color = "#c40000";
+      }
+    }
+  </script>
+</body>
+</html>
